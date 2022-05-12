@@ -1,19 +1,27 @@
 console.log("hello world")
-<script>
-  // ...
 
-  fetch(url)
+  // ...
+document.getElementById("products") 
+
+  fetch("https://627cbf82bf2deb7174e02fdf.mockapi.io/api/v1/shoes")
     .then((response) => {
       return response.json();
     })
     .then((data) => {
-      let authors = data;
+      let products = data;
 
-      authors.map(function(author) {
+      products.map(function(products) {
         let li = document.createElement('li');
         let title = document.createElement('h3');
         let description = document.createElement('p');
         let  image = document.createElement('img');
+        
+        title.innerHTML = `${products.title}`;
+        description.innerHTML = `${products.description}`;
+        
+        
+        li.appendChild(description);
+        li.appendChild(title);
+        list.appendChild(li);
       });
     })
-<script>
